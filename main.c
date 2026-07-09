@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "laberinto.h"
 
 void dibujar_ui(Laberinto *lab, Posicion teseo, Posicion minotauro, Posicion rehenes[], int rehen_rescatado[]);
 
 int main(void) {
+    srand(time(NULL)); //Semilla aleatoria
+
     int filas = 7, columnas = 7;
 
     Laberinto* lab = crear_laberinto(filas, columnas);
@@ -18,7 +21,7 @@ int main(void) {
     Posicion rehenes[3] = {{1, 1}, {filas - 2, 1}, {1, columnas - 2}};
     int rehen_rescatado[3] = {0, 0, 0};
 
-    alterar_paredes_laberinto(lab, 45);
+    generar_laberinto(lab, 10);
 
     printf("LABERINTO GENERADO:\n\n");
     dibujar_ui(lab, teseo, minotauro, rehenes, rehen_rescatado);

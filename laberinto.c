@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <time.h>
 #include "laberinto.h"
 
 Laberinto* crear_laberinto(int filas, int columnas) {
@@ -125,8 +124,7 @@ static void generar_dfs_laberinto(Laberinto* lab, int fila, int columna) {
     }
 }
 
-void alterar_paredes_laberinto(Laberinto* lab, int porcentaje) {
-    srand(time(NULL));
+void generar_laberinto(Laberinto* lab, int porcentaje) {
     generar_dfs_laberinto(lab, 0, 0);
 
     int paredes_extra = (lab->filas * lab->columnas * porcentaje) / 100;

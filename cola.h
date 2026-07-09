@@ -26,7 +26,7 @@ typedef struct {
 Cola* cola_crear(void);
 
 //Agregar posicion al final de la cola, creando un nuevo ColaNodo con malloc
-void cola_encolar(Cola* cola, Posicion pos);
+int cola_encolar(Cola* cola, Posicion pos);
 
 //Eliminar posicion del frente de la cola y devolverla
 Posicion cola_desencolar(Cola* cola);

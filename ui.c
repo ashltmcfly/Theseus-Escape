@@ -5,7 +5,11 @@
 #include "laberinto.h"
 
 void ui_limpiar(void) {
+#ifdef _WIN32
     system("cls");
+#else
+    system("clear");
+#endif
 }
 
 void dibujar_ui(Laberinto *lab, Posicion teseo, Posicion minotauro, Posicion rehenes[], int rehen_rescatado[]) {

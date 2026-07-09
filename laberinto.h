@@ -33,7 +33,7 @@ typedef struct {
 Laberinto* crear_laberinto(int filas, int columnas);
 
 //Generar laberinto con DFS
-void alterar_paredes_laberinto(Laberinto* lab, int porcentaje);
+void generar_laberinto(Laberinto* lab, int porcentaje);
 
 //Abrir el pasillo entre dos celdas adyacentes
 void abrir_pared_laberinto(Laberinto* lab, Posicion a, Posicion b);

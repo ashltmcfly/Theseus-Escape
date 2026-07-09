@@ -12,10 +12,10 @@ Cola* cola_crear(void) {
     return nueva_cola;
 }
 
-void cola_encolar(Cola* cola, Posicion pos) {
+int cola_encolar(Cola* cola, Posicion pos) {
     ColaNodo* nuevo_nodo = malloc(sizeof(ColaNodo));
     if (nuevo_nodo == NULL) {
-        return;
+        return 0;
     }
 
     nuevo_nodo->dato = pos;
@@ -29,6 +29,7 @@ void cola_encolar(Cola* cola, Posicion pos) {
         cola->final = nuevo_nodo;
     }
     cola->tamano++;
+    return 1;
 }
 
 Posicion cola_desencolar(Cola* cola) {
