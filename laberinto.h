@@ -17,7 +17,7 @@ typedef struct {
     int pared_abajo;
     int pared_izquierda;
     int pared_derecha;
-    int visitada;  //usado SOLO durante la generación DFS
+    int visitada;  //auxiliar de recorridos; generar_laberinto lo deja en 0 al terminar
 } Celda;
 
 //Estructura del laberinto completo
@@ -32,7 +32,8 @@ typedef struct {
 //Crear laberinto con todas las paredes cerradas y visitada=0
 Laberinto* crear_laberinto(int filas, int columnas);
 
-//Generar laberinto con DFS
+//Generar laberinto: DFS con backtracking + apertura de paredes extra (ciclos)
+//según el porcentaje dado. Al terminar, visitada queda en 0 en todas las celdas.
 void generar_laberinto(Laberinto* lab, int porcentaje);
 
 //Abrir el pasillo entre dos celdas adyacentes

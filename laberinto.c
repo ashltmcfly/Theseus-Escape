@@ -146,6 +146,13 @@ void generar_laberinto(Laberinto* lab, int porcentaje) {
             abiertas++;
         }
     }
+
+    //Resetear el campo visitada
+    for (int i = 0; i < lab->filas; i++) {
+        for (int j = 0; j < lab->columnas; j++) {
+            lab->grilla[i][j].visitada = 0;
+        }
+    }
 }
 
 int moverse_laberinto(Laberinto* lab, Posicion pos, Direccion dir) {
