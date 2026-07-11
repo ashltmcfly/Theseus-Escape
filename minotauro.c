@@ -1,4 +1,4 @@
 #include <stdlib.h>
-#include "teseo.h"
+#include "minotauro.h"
 
 // moi
