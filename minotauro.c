@@ -34,7 +34,7 @@ void liberar(int** distancias, int filas) {
 
 Posicion mino_next_step(Laberinto* lab, Posicion posMi, Posicion posTe) {
     int** distancias = mat_distancias(lab->filas, lab->columnas);
-    if(distancias = NULL) {
+    if(distancias == NULL) {
         return posMi; 
 }
 
@@ -54,7 +54,7 @@ while (!cola_vacia(cola_act)) {
     for (int i = 0; i < 4; i++){
      Direccion dir = direcciones[i];
 
-        if (mover_laberinto(lab, actual, dir)) { //confirmar si podemos ir por ahí
+        if (moverse_laberinto(lab, actual, dir)) { //confirmar si podemos ir por ahí
             Posicion vecino = laberinto_vecino(actual, dir);
         
             if (distancias[vecino.fila][vecino.columna] == -1) {
