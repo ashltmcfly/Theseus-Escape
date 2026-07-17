@@ -53,3 +53,13 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Configuración local de VS Code
+.vscode/
+
+# Ejecutables de Windows
+*.exe
+
+# Archivos de objeto temporales
+*.o
+*.obj
