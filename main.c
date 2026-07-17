@@ -3,11 +3,13 @@
 #include <time.h>
 #include "laberinto.h"
 #include "minotauro.h"
+#include "teseo.h"
+#include "minotauro.h"
 
 void dibujar_ui(Laberinto *lab, Posicion teseo, Posicion minotauro, Posicion rehenes[], int rehen_rescatado[]);
 
 int main(void) {
-    srand(time(NULL)); //Semilla aleatoria
+    srand(time(NULL)); 
 
     int filas = 7, columnas = 7;
 
