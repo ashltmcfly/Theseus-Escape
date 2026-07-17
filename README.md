@@ -1,5 +1,6 @@
 # Theseus-Escape
 **Proyecto:** Simulación del Laberinto de Creta (Teseo, el Minotauro y los rehenes)
+
 **Miembros:** Ashly León, Moises Araujo, Esteban Avila
 
 ## 1. Descripción general
