@@ -27,7 +27,7 @@ typedef struct {
     int columnas;
 } Laberinto;
 
-//Funciones para manejar la cola
+//Funciones para manejar el laberinto
 
 //Crear laberinto con todas las paredes cerradas y visitada=0
 Laberinto* crear_laberinto(int filas, int columnas);
