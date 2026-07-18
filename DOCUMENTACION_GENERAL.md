@@ -4,13 +4,13 @@
 
 ## Resumen del proyecto
 
-El proyecto parte de una adaptación entre los miembros del Mito del Minotauro, nuestra versión tendremos a Teseo, como el jugador, quien dentro del laberinto de Creta debe restacar a los rehenes repartidos en el laberinto mientras evita ser atrapado por el Minotauro. Esta planeado como un juego por turnos en consola donde Teseo (jugador) debe moverse entre las distintas celdas del laberinto rescatando a cada rehen, mientras que el Minotauro lo persigue por medio del algoritmo (BFS). Cada movimiento representa un turno entre Teseo y el Minotauro hasta que se cumpla la condición de victoria o derrota.
+El proyecto parte de una adaptación del Mito del Minotauro. En nuestra versión, tendremos a Teseo como el jugador y quien, estando dentro del Laberinto de Creta, debe restacar a tres rehenes repartidos en el laberinto mientras evita ser atrapado por el Minotauro. Está planteado como un juego por turnos en consola donde Teseo (jugador) debe moverse entre las distintas celdas del laberinto rescatando a cada rehén, mientras que el Minotauro lo persigue por medio del algoritmo (BFS). Cada movimiento representa un turno entre Teseo y el Minotauro hasta que se cumpla la condición de victoria o derrota.
 
 **Condición de victoria:** Rescatar a todos los rehenes.
 **Condición de derrota:** Ser atrapado por el Minotauro.
 
 ## Estructura del proyecto
-Se presenta una organización modular con separación clara de responsabilidades:
+Se presenta una organización modular con separación de responsabilidades:
 
 | Módulo | Responsabilidad |
 |:-------- |:--------:|
