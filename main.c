@@ -9,6 +9,7 @@ void dibujar_ui(Laberinto *lab, Posicion teseo, Posicion minotauro, Posicion reh
 
 int main(void) {
     srand(time(NULL)); 
+    int c;
 
     int filas = 7, columnas = 7;
 
@@ -29,7 +30,9 @@ int main(void) {
 
     printf("LABERINTO GENERADO:\n\n");
     dibujar_ui(lab, teseo.pos, minotauro, rehenes, teseo.rehenes_rescatados);
-    getchar();
+    printf("PULSE ENTER PARA CONTINUAR\n");
+    fflush(stdout);
+    while ((c = getchar()) != '\n' && c != EOF);
     
     for (int turno = 0; turno < 100; turno++) {
         printf("========== TURNO %d ==========\n\n", turno + 1);
@@ -39,7 +42,9 @@ int main(void) {
         printf("Ingrese movimiento: ");
         
         char tecla;
-        scanf("%c", &tecla);
+        scanf(" %c", &tecla);
+
+        while ((c = getchar()) != '\n' && c != EOF);
         
         if (mover_teseo(&teseo, lab, tecla)) {
             printf("Teseo se movió.\n");
@@ -59,14 +64,21 @@ int main(void) {
             break;
         }
 
-        printf("\nPulsa Enter para que el Minotauro se mueva...\n");
+        //printf("\nPulsa Enter para que el Minotauro se mueva...\n");
         
+        //printf("El Minotauro se mueve...\n");
+        //Posicion siguiente_minotauro = mino_next_step(lab, minotauro, teseo.pos);
+        //minotauro = siguiente_minotauro;
+        //getchar(); // consumir enter anterior
+        //getchar();
+
         // --- TURNO DEL MINOTAURO ---
-        printf("El Minotauro se mueve...\n");
+        printf("\nPulsa Enter para que el Minotauro se mueva\n");
+        //while ((c = getchar()) != '\n' && c != EOF);
+        getchar();
         Posicion siguiente_minotauro = mino_next_step(lab, minotauro, teseo.pos);
         minotauro = siguiente_minotauro;
-        getchar(); // consumir enter anterior
-        getchar();
+
         // Mostrar estado del juego
         printf("\nPosición de Teseo: (%d, %d)\n", teseo.pos.fila, teseo.pos.columna);
         printf("Posición del Minotauro: (%d, %d)\n\n", minotauro.fila, minotauro.columna);

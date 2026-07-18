@@ -18,9 +18,9 @@ int** mat_distancias(int filas, int columnas) {
             }
             free(distancias); 
             return NULL;
-    } //memoria columnas
-    for (int j = 0; j < columnas; j++) {
-        distancias[i][j] = -1;
+        } //memoria columnas
+        for (int j = 0; j < columnas; j++) {
+            distancias[i][j] = -1;
         }
     }
 
@@ -61,11 +61,12 @@ Posicion mino_next_step(Laberinto* lab, Posicion posMi, Posicion posTe) {
 
             if (moverse_laberinto(lab, actual, dir)) { //confirmar si podemos ir por ahí
                 Posicion vecino = laberinto_vecino(actual, dir);
-            
-                if (distancias[vecino.fila][vecino.columna] == -1) {
-                    distancias[vecino.fila][vecino.columna] = distancias[actual.fila][actual.columna] + 1;
-                    cola_encolar(cola_act, vecino);
-                }
+                if (vecino.fila >= 0 && vecino.fila < lab->filas && vecino.columna >= 0 && vecino.columna < lab->columnas) { 
+                    if (distancias[vecino.fila][vecino.columna] == -1) {
+                        distancias[vecino.fila][vecino.columna] = distancias[actual.fila][actual.columna] + 1;
+                        cola_encolar(cola_act, vecino);
+                    }
+                }    
             }
         }
     }
@@ -81,17 +82,19 @@ Posicion mino_next_step(Laberinto* lab, Posicion posMi, Posicion posTe) {
         Direccion dir = dirs_mino[i];
         if(moverse_laberinto(lab, posMi, dir)) {
             Posicion vecino = laberinto_vecino(posMi, dir);
-            int dist_vecino = distancias[vecino.fila][vecino.columna];
 
-            if (dist_vecino != -1 && dist_vecino < min_distancia) {
-            min_distancia = dist_vecino;
-            movestart = vecino;
+            if (vecino.fila >= 0 && vecino.fila < lab->filas && vecino.columna >= 0 && vecino.columna < lab->columnas) { 
+                int dist_vecino = distancias[vecino.fila][vecino.columna];
+                if (dist_vecino != -1 && dist_vecino < min_distancia) {
+                min_distancia = dist_vecino;
+                movestart = vecino;
+                }
             }
         }
-    }
 
+    }
     cola_destruir(cola_act);
-    liberar (distancias, lab ->filas);
+    liberar(distancias, lab->filas);
 
     return movestart;
 }
